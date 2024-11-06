@@ -83,7 +83,7 @@ const UserTable = () => {
         <tbody className="bg-white divide-y divide-gray-200">
           {users.map((user) => (
             <UserInfo
-              key={user._id}
+              key={user.username}
               user={user}
               onSave={onSave}
               onDelete={onDelete}
