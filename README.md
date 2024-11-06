@@ -20,7 +20,7 @@ Pour lancer les tests du back-end, utilisez :
 
     npm run test
     
-Si des problèmes surviennent avec Docker ou si vous préférez lancer directement les services, voici les commandes manuelles :
+Si des problèmes surviennent avec Docker ou si vous préférez lancer directement les services, voici les commandes manuelles (mais avant cela il faut faire un npm install pour les deux front et back) :
 
 Front: 
 
