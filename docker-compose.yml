@@ -1,0 +1,54 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: nestjs-backend
+    volumes:
+      - ./backend:/app # Monte le code source du backend pour le hot-reload
+      - /app/node_modules
+    ports:
+      - "3000:3000" # Expose le backend sur le port 3000
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@postgres-db:5432/nestdb
+      - MONGODB_URL=mongodb://mongo-db:27017/nest_messaging
+    depends_on:
+      - postgres-db
+      - mongo-db
+    command: npm run start:dev # Mode de développement pour NestJS
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: react-frontend
+    volumes:
+      - ./frontend:/app # Monte le code source du frontend pour le hot-reload
+      - /app/node_modules
+    ports:
+      - "3001:3000" # Expose le frontend sur le port 3001
+    command: npm start # Mode de développement pour React
+
+  postgres-db:
+    image: postgres:13
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: nestdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  mongo-db:
+    image: mongo:5
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  postgres-data:
+  mongo-data:
