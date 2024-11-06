@@ -6,7 +6,7 @@ L'application est entièrement conteneurisée avec **Docker**. Le fichier `docke
 
 .Avant de démarrer les conteneurs, il est nécessaire de créer un fichier `.env` dans le répertoire du back-end. Ce fichier `.env` est basé sur un modèle, `.env.template`, qui contient déjà toutes les configurations nécessaires. Dans notre cas, il suffit de copier le contenu de `.env.template` dans `.env`.
 
-Démarrez Docker  avec la commande :
+Démarrez Docker  avec la commande au répertoire contenant le fichier docker-compose.yml:
 
     docker-compose up --build
   
