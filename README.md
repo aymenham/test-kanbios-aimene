@@ -56,8 +56,21 @@ Le système de gestion de sessions repose sur des tokens d’authentification av
     signOptions: { expiresIn:  '30m' // ici ... },
     
     }),
-### 4-Packages Techniques
-### Packages Techniques
+
+### 4-Test des Messages en Temps Réel
+
+Pour tester la fonctionnalité de chat en temps réel, vous pouvez lancer le front-end dans deux environnements distincts et simuler un échange entre deux utilisateurs. Voici la procédure recommandée :
+
+1.  **Lancer le Front-End en Docker** : Lancez le front-end normalement via Docker en utilisant la commande `docker-compose up`.
+    
+2.  **Lancer le Front-End Manuellement** : Ouvrez un second terminal, naviguez dans le dossier du front-end et lancez-le manuellement avec la commande :
+			 npm start
+
+ 3. **Tester dans Deux Navigateurs** : Accédez à l'application dans deux navigateurs différents (ou deux fenêtres de navigation privée). Connectez-vous avec deux comptes distincts pour observer la synchronisation en temps réel des messages.
+
+
+### 5-Packages Techniques
+
 
 #### Packages du Front-end
 
