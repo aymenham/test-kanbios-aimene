@@ -1,4 +1,4 @@
-## Test technique Aimene - Kanbios Application de Chat 
+## Application de Chat 
 C'est un répertoire pour une application de chat en temps réel, construite avec les technologies **React.js** pour le front-end et **Nest.js** pour le back-end. La gestion des utilisateurs est effectuée avec une base de données **PostgreSQL**, tandis que les messages sont stockés dans **MongoDB** pour supporter des échanges rapides et synchronisés en temps réel via  **Socket. io**. 
 
 ### 1-Lancement de l’Application
